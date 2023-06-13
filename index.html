@@ -9,16 +9,211 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/ico" href="favicon.ico">
 
-    <title> Starter Page</title>
+    <title> Learning Hub</title>
     </head>
 
     <body id="body">
         <header>
-
+            <span id="logo">Bmo Logo</span>
+            <p id="page_title">Learning Hub</p>
+            <div id="hamburger">
+                <button id="hamburger_link">
+                    <div id="hamburger_menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
+            </div>
         </header>
     
         <main>
- 
+            <section id="banner">
+                <h1 class="main_title">Welcome to the Learning Hub</h1>
+                <p class="paragraph">The Learning Hub offers exstensive online resources to help you navigate BMO Investorline.</p>
+                <p class="paragraph">Access the latest materials including videos, articles, FAQs, and more.</p>
+            </section>
+
+            <section id="recent_section">
+                <h2 class="title_1">Recently Added</h2>
+
+                <div id="recent_video">
+                    <div id="recent_content">
+                        <p class="paragraph">General Platform Navigation, where you find certain functions</p>
+                        <p class="paragraph">A quick guide to help you learn how to find your way around all the new features we have added to Investorline</p>
+                        <span class="video_length">Video Length: 2:30</span>
+                    </div>
+                    <video controls width="100%">
+                        <source src="/media/cc0-videos/flower.webm" type="video/webm">
+                    
+                        <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+                    
+                        Download the
+                        <a href="/media/cc0-videos/flower.webm">WEBM</a>
+                        or
+                        <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                        video.
+                    </video>
+                </div>
+            </section>
+
+            <section id="coming_soon_section">
+                <h2 class="title_1">Coming Soon</h2>
+                <div class="content_wrapper">
+                    <figure>
+                        <video controls width="100%">
+                            <source src="/media/cc0-videos/flower.webm" type="video/webm">
+                        
+                            <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+                        
+                            Download the
+                            <a href="/media/cc0-videos/flower.webm">WEBM</a>
+                            or
+                            <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                            video.
+                        </video>
+                        <figcaption>
+                            <p class="caption">How to look up quotes for stocks and other securities</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <video controls width="100%">
+                            <source src="/media/cc0-videos/flower.webm" type="video/webm">
+                        
+                            <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+                        
+                            Download the
+                            <a href="/media/cc0-videos/flower.webm">WEBM</a>
+                            or
+                            <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                            video.
+                        </video>
+                        <figcaption>
+                            <p class="caption">How to look up quotes for stocks and other securities</p>
+                        </figcaption>
+                    </figure>
+                    <div class="content_footer">
+                        <a href="#" class="link">more</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="video_section">
+                <h2 class="title_1" id="video_tablist">videos by topic</h2>
+                <div role="tablist" id="tab_controls">
+                    <button type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="tabpanel_1"
+                    class="tabpanel_btn active"
+                    tabindex="-1">How to use InvestorLine<span></span></button>
+                    <button type="button"
+                    role="tab"
+                    aria-selected="false"
+                    class="tabpanel_btn"
+                    aria-controls="tabpanel_2"
+                    tabindex="-1">Investment advice<span></span></button>
+                </div>
+                <div class="content_wrapper" >
+                    <h3 class="headline">trending Now</h3>
+                    <div role="tabpanel" id="tabpanel_1">
+                        <figure>
+                            <video controls width="100%">
+                                <source src="/media/cc0-videos/flower.webm" type="video/webm">
+                            
+                                <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+                            
+                                Download the
+                                <a href="/media/cc0-videos/flower.webm">WEBM</a>
+                                or
+                                <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                                video.
+                            </video>
+                            <figcaption>
+                                <p class="caption">How to look up quotes for stocks and other securities</p>
+                            </figcaption>
+                        </figure>
+    
+                        <figure>
+                            <video controls width="100%">
+                                <source src="/media/cc0-videos/flower.webm" type="video/webm">
+                            
+                                <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+                            
+                                Download the
+                                <a href="/media/cc0-videos/flower.webm">WEBM</a>
+                                or
+                                <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                                video.
+                            </video>
+                            <figcaption>
+                                <p class="caption">How to look up quotes for stocks and other securities</p>
+                            </figcaption>
+                        </figure>
+                        <div class="content_footer">
+                            <a href="#" class="link">more</a>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" id="tabpanel_2">
+                        <figure>
+                            <video controls width="100%">
+                                <source src="/media/cc0-videos/flower.webm" type="video/webm">
+                            
+                                <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+                            
+                                Download the
+                                <a href="/media/cc0-videos/flower.webm">WEBM</a>
+                                or
+                                <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                                video.
+                            </video>
+                            <figcaption>
+                                <p class="caption">How to look up quotes for stocks and other securities</p>
+                            </figcaption>
+                        </figure>
+    
+                        <figure>
+                            <video controls width="100%">
+                                <source src="/media/cc0-videos/flower.webm" type="video/webm">
+                            
+                                <source src="/media/cc0-videos/flower.mp4" type="video/mp4">
+                            
+                                Download the
+                                <a href="/media/cc0-videos/flower.webm">WEBM</a>
+                                or
+                                <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                                video.
+                            </video>
+                            <figcaption>
+                                <p class="caption">How to look up quotes for stocks and other securities</p>
+                            </figcaption>
+                        </figure>
+                        <div class="content_footer">
+                            <a href="#" class="link">more</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq_section">
+                <h2 class="title_1">frequently asked questions</h2>
+                <div class="content_wrapper">
+                    <div class="row">
+                        <button class="toggle_btn" aria-controls="t1"><span class="address_body">Who is self-Directed for?</span> <span class="chevron"></span></button>
+                        <div class="faq_content" role="region" id="t1">
+                            <p class="hours_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="toggle_btn" aria-controls="t2"><span class="address_body">What is the minimum amount i need?</span> <span class="chevron"></span></button>
+                        <div class="faq_content" role="region" id="t2">
+                            <p class="hours_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> 
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     
         <footer>

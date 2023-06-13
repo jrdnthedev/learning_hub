@@ -1,0 +1,117 @@
+@use 'variables';
+@import 'header';
+@import 'typography';
+@import 'recent_section';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display:grid;
+    // grid-template-columns: repeat(12,1fr);
+    // grid-template-rows: min-content auto min-content;
+    grid-template: min-content auto min-content / repeat(12, 1fr);
+    font-size: 16px;
+    margin: 0;
+    font-family: sans-serif;
+    background: variables.$white;
+    color: variables.$slate;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+main {
+    grid-column: 1 / -1;
+}
+
+section {
+    padding: 1rem;
+}
+
+#banner {
+    background: variables.$sky_blue;
+    grid-column: 1 / -1;
+}
+
+.content_wrapper {
+    background: variables.$light_grey;
+    padding: 1rem;
+    &.top_border {
+        border-top: 1px solid variables.$primary;
+    }
+    figure {
+        margin: 0 0 1.5rem;
+        &:last-of-type {
+            margin: 0;
+        }
+        figcaption {
+            padding: .5rem 1rem;
+        }
+    }
+}
+
+.content_footer {
+    text-align: right;
+}
+
+#tabpanel_2 {
+    display: none;
+}
+
+.tabpanel_btn {
+    grid-column: span 6;
+    padding: 0;
+    font-size: 14px;
+    line-height: 24px;
+    color: variables.$grey;
+    span {
+        background: variables.$primary_light_grey;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        margin-top: 0.5rem;
+        display: block;    
+    }
+    &.active {
+        color: variables.$slate;
+        span {
+            background: variables.$primary;
+        }
+    }
+}
+
+#tab_controls {
+    display: grid;
+    grid-template: min-content auto min-content / repeat(12,1fr);
+    margin-bottom: 1.5rem;
+}
+
+.toggle_btn {
+    
+    color: variables.$slate;
+    padding: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+
+.faq_content {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
