@@ -1,0 +1,37 @@
+#coming_soon_section .content_wrapper {
+    figure {
+        &:last-of-type {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    #coming_soon_section .content_wrapper {
+        display: grid;
+        grid-template: min-content auto min-content/ repeat(12, 1fr);
+        column-gap: 1rem;
+        figure {
+            grid-column: span 6;
+            margin: 0;
+        }
+        .content_footer {
+            grid-column: 1 / -1;
+        }
+    }
+    #coming_soon_section .content_wrapper {
+        padding: 1rem;
+        background: variables.$light_grey;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    #coming_soon_section .content_wrapper {
+        figure {
+            grid-column: span 4;
+            &:last-of-type {
+                display: block;
+            }
+        }
+    }
+}
