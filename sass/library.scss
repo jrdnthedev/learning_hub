@@ -90,11 +90,13 @@ aside {
     label {
         position: relative;
         padding-left: 32px;
+        height: 24px;
+        align-items: center;
+        display: flex;
     }
     li {
-        padding: 0.5rem;
+        padding: 0;
         margin-bottom: 1rem;
-        height: 40px; 
     }
 }
 
