@@ -46,10 +46,13 @@ section {
 }
 
 .content_wrapper {
-    background: variables.$light_grey;
-    padding: 1rem;
+    
+    // padding: 1rem;
     &.top_border {
         border-top: 1px solid variables.$primary;
+    }
+    &.background {
+        background: variables.$light_grey;
     }
     figure {
         margin: 0 0 1.5rem;
@@ -60,6 +63,9 @@ section {
             padding: .5rem 1rem;
         }
     }
+}
+figure {
+    border: 1px solid variables.$primary_light_grey;
 }
 
 .content_footer {
@@ -99,14 +105,17 @@ section {
 }
 
 .toggle_btn {
-    
+    padding: 1rem 0;
     color: variables.$slate;
-    padding: 0;
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
     cursor: pointer;
+    border-bottom: 1px solid variables.$primary_light_grey;
+    &.active {
+        border-bottom: 1px solid variables.$primary;
+    }
 }
 
 .faq_content {
