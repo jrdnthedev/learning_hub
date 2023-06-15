@@ -57,6 +57,7 @@ aside {
     p{
         justify-content: space-between;
         display: flex;
+        margin-bottom: 1rem;
     }
     #filter_menu_header {
         padding: 1rem;
@@ -69,9 +70,35 @@ aside {
         display: flex;
         flex-direction: column;
     }
+    
 }
 
+#filter_tags {
+    > div {
+        display: inline-block;
+        margin-bottom: 1rem;
+        width: max-content;
+        > span {
+            border: 1px solid grey;
+            border-radius: 16px;
+            text-align: center;
+            display: flex;
+            padding: 0.2rem 0.5rem;
+            align-items: center;
+        }
+    }
+}
+#close_btn_wrapper {
+    margin-bottom: 1rem;
+    #filter_close_btn {
+        padding: 0;
+    }
+}
 #filter_menu_list{
+    padding: 0;
+    margin: 0;
+    height: 186px;
+    overflow: auto;
     input {
         position: absolute;
         opacity: 0;
@@ -80,6 +107,7 @@ aside {
         width: 0;
         &:checked ~ .checkmark {
             background-color: variables.$primary;
+            border: 2px solid variables.$primary;
             &:after {
                 content: "";
                 position: absolute;
@@ -99,7 +127,10 @@ aside {
         margin-bottom: 1rem;
     }
 }
-
+#filter_wrapper {
+    height: calc(100% - 50px);
+    overflow: hidden;
+}
 .checkmark {
     position: absolute;
     top: 0;
@@ -125,4 +156,42 @@ aside {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  }
+
+  .cross {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+  }
+  .cross:before, .cross:after {
+    position: absolute;
+    content: ' ';
+    height: 16px;
+    width: 2px;
+    background-color: variables.$grey;
+  }
+  .cross:before {
+    transform: rotate(45deg);
+  }
+  .cross:after {
+    transform: rotate(-45deg);
+  }
+
+  #filter_dropdown_wrapper {
+    margin-bottom: 1.5rem;
+    select {
+        width: 100%;
+        border-radius: 4px;
+        padding: 0.5rem 0.25rem;
+        border: 1px solid variables.$grey;
+    }
+  }
+
+  #apply_button {
+    margin: 0 auto;
+    padding: 0.5rem 2.5rem;
+    border-radius: 100px;
+    border: 2px solid #0075BE;
+    margin-bottom: 1.5rem;
   }
