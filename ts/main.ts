@@ -31,5 +31,6 @@ function toggleMenu() {
         this.classList.remove('active');
         menu?.classList.remove('open');
     }
+    this.ariaExpanded = toggleFilterMenu;
 }
 

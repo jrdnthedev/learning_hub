@@ -37,27 +37,32 @@
                     <span>Filters . <span>0 applied</span></span>
                     <span>Details</span>
                 </button>
-                <aside id="filter_menu">
+                <aside id="filter_menu" role="region" aria-labelledby="filter_btn">
                     <div id="filter_wrapper">
                         <div id="filter_menu_header">
                             <div id="close_btn_wrapper"><button id="filter_close_btn" ><span class="cross"></span></button></div>
-                            <p><span>Filters . <span>0 applied</span></span> <span><a href="#" class="link">clear all</a></span></p>
+                            <p><span id="filter_count">Filters . <span>0 applied</span></span> <span><a href="#" class="link">clear all</a></span></p>
                             <div id="filter_tags">
                                 <div><span>Investments <span class="cross"></span></span></div>
                                 <div><span>Move money <span class="cross"></span></span></div>
                                 <div><span>Advice <span class="cross"></span></span></div>
                                 <div><span>Stock options <span class="cross"></span></span></div>
                             </div>
-                            <div id="tags"></div>
                         </div>
                         <div id="filter_menu_body">
                             <div id="filter_dropdown_wrapper">
-                                <select name="" id="">
+                                <select name="" id="media_select">
                                     <option value="videos">Videos</option>
                                 </select>
+                                <ul id="media_list">
+                                    <li class="active"><a href="#">All</a></li>
+                                    <li><a href="#">Videos</a></li>
+                                    <li><a href="#">Podcasts</a></li>
+                                </ul>
                             </div>
-                            <a href="#" class="link">Select all</a>
+                            
                             <ul id="filter_menu_list">
+                                <a href="#" class="link">Select all</a>
                                 <li>
                                     <label for="investments">
                                         <input type="checkbox" id="investments">
@@ -124,8 +129,14 @@
                             </ul>
                         </div>
                         <div id="filter_menu_footer">
-                            <button class="link" id="apply_button">apply filters</button>
-                            <button class="link">close</button>
+                            <div id="mobile_btn_wrapper" class="footer_btn_wrapper">
+                                <button class="link" id="apply_button">apply filters</button>
+                                <button class="link">close</button>
+                            </div>
+                            <div id="desktop_btn_wrapper">
+                                <button class="link">close</button>
+                                <button class="link" id="apply_button">apply</button>
+                            </div>
                         </div>
                     </div>
                 </aside>
