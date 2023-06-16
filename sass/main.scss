@@ -23,7 +23,7 @@ body {
     font-size: 16px;
     margin: 0;
     font-family: sans-serif;
-    background: variables.$white;
+    background: variables.$main_background;
     color: variables.$slate;
 }
 
@@ -46,11 +46,16 @@ main {
 
 section {
     padding: 1rem;
+    background: variables.$white;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 0 2px rgba(0,25,40,0.12), 0 2px 2px rgba(0,25,40,0.07);
 }
 
 #banner {
     background: variables.$sky_blue;
     grid-column: 1 / -1;
+    box-shadow: unset;
 }
 
 .content_wrapper {
