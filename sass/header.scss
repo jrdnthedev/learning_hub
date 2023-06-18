@@ -25,6 +25,9 @@
 }
 
 header {
+    grid-column: 1 / -1;
+}
+#header_wrapper {
     display:grid;
     grid-template: min-content auto min-content / repeat(12, 1fr);
     background: variables.$primary;
@@ -51,4 +54,31 @@ header {
     display: grid;
     justify-content: end;
     align-items: center;
+}
+
+@media screen and (min-width:1024px) {
+    nav {
+        display:grid;
+        grid-template: min-content auto min-content / repeat(12, 1fr);
+        padding: .5rem 1rem 0 1rem;
+        background: variables.$white;
+        ul {
+            grid-column: span 8;
+            li {
+                display: inline-block;
+            }
+        }
+        div {
+            grid-column: span 4;
+            input[search] {
+                border-radius: 26px;
+                border: none;
+                margin-bottom: .2rem;
+            }
+        }
+    }
+
+    #page_title, #hamburger{
+        display: none;
+    }
 }
