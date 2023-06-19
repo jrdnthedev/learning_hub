@@ -14,17 +14,41 @@
 
     <body id="body">
         <header>
-            <span id="logo">Bmo Logo</span>
-            <p id="page_title">Learning Hub</p>
-            <div id="hamburger">
-                <button id="hamburger_link">
-                    <div id="hamburger_menu">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </button>
+            <div id="header_wrapper">
+                <span id="logo">Bmo Logo</span>
+                <p id="page_title">Learning Hub</p>
+                <div id="hamburger">
+                    <button id="hamburger_link">
+                        <div id="hamburger_menu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </button>
+                </div>
             </div>
+            <nav>
+                <div id="nav_wrapper">
+                    <div id="nav_wrapper_header">
+                        <div id="close_btn_wrapper"><button id="menu_close_btn" ><span class="cross"></span></button></div>
+                        <p>Navigation Menu</p>
+                    </div>
+                    <div id="nav_wrapper_body">
+                        <div id="mobile_searchbar">
+                            <input type="search" name="search" id="search" class="search" placeholder="Search">
+                        </div>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="library.html">Library</a></li>
+                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div id="desktop_searchbar">
+                        <input type="search" name="search" id="search" class="search" placeholder="Search">
+                    </div>
+                </div>
+            </nav>
         </header>
         <section id="banner">
             <h1 class="main_title">Welcome to the Learning Hub</h1>
@@ -110,7 +134,7 @@
                     </figure>
                     
                     <div class="content_footer">
-                        <a href="#" class="link">more</a>
+                        <a href="coming-soon.html" class="link">more</a>
                     </div>
                 </div>
             </section>

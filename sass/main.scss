@@ -58,6 +58,7 @@ section {
     background: variables.$sky_blue;
     grid-column: 1 / -1;
     box-shadow: unset;
+    padding: 2rem 2rem 2.5rem 2rem;
 }
 
 .content_wrapper {
@@ -102,10 +103,26 @@ figure {
     }
 }
 
+.search {
+    border-radius: 24px;
+    border: 1px solid variables.$primary_light_grey;
+    background: variables.$white;
+    padding: 0.2rem 2rem 0.2rem 1rem;
+}
+
+@media screen and (min-width:768px) {
+    #banner {
+        padding: 2.5rem 4rem 2.5rem 2.5rem;
+    }
+}
+
 @media screen and (min-width:1024px) {
     main {
         width: 1024px;
         margin: 0 auto;
+    }
+    #banner {
+        padding: 4.5rem 7.3rem;
     }
 }
 
