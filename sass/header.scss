@@ -76,7 +76,27 @@ nav {
         display: block;
     }
 }
+#nav_wrapper_header {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid variables.$primary_light_grey;
+    padding: 1rem;
+}
+#nav_wrapper_body {
+    ul {
+        li {
+            border-top: 1px solid variables.$primary_light_grey;
+            padding: 1rem 2rem;
+        }
+    }
+}
 
+#mobile_searchbar {
+    padding: 0 1rem 1rem;
+    input {
+        width: 100%;
+        padding: 0.7rem 1rem;
+    }
+}
 @media screen and (min-width:768px) {
     nav {
         width: 375px;
