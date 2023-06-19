@@ -12,6 +12,15 @@ filter_menu?.addEventListener('click',toggleMenu);
 close_btn?.addEventListener('click',toggleMenu);
 hamburger?.addEventListener('click', toggleMobileMenu);
 mobile_menu_close?.addEventListener('click', toggleMobileMenu);
+const apply_filter = document.getElementById('apply_button');
+apply_filter?.addEventListener('click', filter);
+const clear_all_filter = document.getElementById('clear_all_filter');
+const library_videos = document.getElementById('library_videos');
+clear_all_filter?.addEventListener('click', function(){
+    removeAllChildNodes(library_videos);
+    loadVideos(videos);
+});
+
 const videos = [
     {
         "title": "How to look up quotes for stocks and other securities",
@@ -95,25 +104,44 @@ function toggleMobileMenu() {
 }
 
 function filter() {
-    
+    const filtered_list = videos.filter(item => item.category === 'video');
+    removeAllChildNodes(library_videos);
+    loadVideos(filtered_list);
 }
 
-function loadVideos() {
-    
-    videos.forEach(element => {
+function removeAllChildNodes(parent: any) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function loadVideos(item: any) {
+    item.forEach((element: any) => {
         const figure = document.createElement("figure");
         const figcaption = document.createElement("figcaption");
         const video = document.createElement("video");
         const paragraph = document.createElement("p");
         const date_added = document.createElement("span");
         const video_length = document.createElement("span");
+        const source = document.createElement("source");
+        const source_backup = document.createElement("source");
+        const link = document.createElement("a");
+        const link_backup = document.createElement("a");
         const library_videos = document.getElementById('library_videos');
+        source.src = '/media/cc0-videos/flower.webm';
+        source.type = "video/webm";
+        source_backup.src = '/media/cc0-videos/flower.mp4';
+        source_backup.type = 'video/mp4';
+        link.href = '/media/cc0-videos/flower.webm';
+        link_backup.href = '/media/cc0-videos/flower.mp4';
         paragraph.textContent = element.title;
         paragraph.classList.add('paragraph');
         date_added.textContent = element.date;
         date_added.classList.add('video_length');
         video_length.textContent = element.video_length;
         video_length.classList.add('video_length');
+        video.controls = true;
+        video.append(source,source_backup,link,link_backup);
         figcaption.append(date_added,video_length, paragraph);
         figure.append(video,figcaption);
         library_videos?.append(figure);
@@ -121,5 +149,5 @@ function loadVideos() {
 }
 
 window.onload = (event) => {
-    loadVideos();
+    loadVideos(videos);
 };
