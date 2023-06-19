@@ -28,14 +28,25 @@
                 </div>
             </div>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="library.html">Library</a></li>
-                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                    <li><a href="faqs.html">FAQs</a></li>
-                </ul>
-                <div>
-                    <input type="search" name="search" id="search" placeholder="Search">
+                <div id="nav_wrapper">
+                    <div id="nav_wrapper_header">
+                        <div id="close_btn_wrapper"><button id="menu_close_btn" ><span class="cross"></span></button></div>
+                        <p>Navigation Menu</p>
+                    </div>
+                    <div id="nav_wrapper_body">
+                        <div id="mobile_searchbar">
+                            <input type="search" name="search" id="search" class="search" placeholder="Search">
+                        </div>
+                        <ul>
+                            <li><a href="index.html" class="link">Home</a></li>
+                            <li><a href="library.html" class="link">Library</a></li>
+                            <li><a href="coming-soon.html" class="link">Coming Soon</a></li>
+                            <li><a href="faqs.html" class="link">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div id="desktop_searchbar">
+                        <input type="search" name="search" id="search" class="search" placeholder="Search">
+                    </div>
                 </div>
             </nav>
         </header>

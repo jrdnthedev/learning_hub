@@ -76,6 +76,9 @@ nav {
         display: block;
     }
 }
+#nav_wrapper {
+    display: unset;
+}
 #nav_wrapper_header {
     margin-bottom: 1rem;
     border-bottom: 1px solid variables.$primary_light_grey;
@@ -108,16 +111,32 @@ nav {
     #header_wrapper {
         padding: 1.5rem 2rem;
     }
+    #nav_wrapper_header {
+        display: none;
+    }
     nav {
         display:grid;
         grid-template: min-content auto min-content / repeat(12, 1fr);
         padding: 0.5rem 2.5rem 0 3rem;
         background: variables.$white;
+        position: unset;
+        width: unset;
+        height: unset;
+    }
+    #nav_wrapper {
+        display: grid;
+        grid-template: min-content auto min-content / repeat(12, 1fr);
+        grid-column: 1 / -1;
+    }
+    #nav_wrapper_body {
+        grid-column: span 8;
         ul {
-            grid-column: span 8;
+            
             li {
                 display: inline-block;
                 margin-right: 3rem;
+                border-top: unset;
+                padding: unset;
                 &.active {
                     a {
                         border-bottom: 3px solid variables.$primary;
@@ -134,12 +153,14 @@ nav {
                     font-weight: 400;
                 }
             }
-        }
-        div {
-            grid-column: span 4;
-            input{
-                margin-bottom: .2rem;
-            }
+        }  
+    }
+    #desktop_searchbar {
+        grid-column: span 4;
+        display: flex;
+        justify-content: end;
+        input{
+            margin-bottom: .2rem;
         }
     }
 
@@ -149,8 +170,5 @@ nav {
 
     #mobile_searchbar {
         display: none;
-    }
-    #desktop_searchbar {
-        display: block;
     }
 }
