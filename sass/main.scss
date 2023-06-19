@@ -59,6 +59,7 @@ section {
     grid-column: 1 / -1;
     box-shadow: unset;
     padding: 2rem 2rem 2.5rem 2rem;
+    margin-bottom: 2rem;
 }
 
 .content_wrapper {
@@ -113,6 +114,7 @@ figure {
 @media screen and (min-width:768px) {
     #banner {
         padding: 2.5rem 4rem 2.5rem 2.5rem;
+        margin-bottom: 3rem;
     }
 }
 

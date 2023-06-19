@@ -158,7 +158,7 @@ nav {
     #desktop_searchbar {
         grid-column: span 4;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         input{
             margin-bottom: .2rem;
         }

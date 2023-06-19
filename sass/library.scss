@@ -231,6 +231,10 @@ aside {
     }
     #library .content_wrapper figure{
         grid-column: span 6;
+        figcaption .video_length {
+            display: block;
+            margin-bottom: 1rem;
+        }
     }
   }
 

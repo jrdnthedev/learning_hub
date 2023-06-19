@@ -24,7 +24,7 @@ function compileTypescript(){
     return src('ts/**/*.ts')
     .pipe(ts({
         noImplicitAny: true,
-        outFile: 'main.js'
+        outFile: 'main.js',
     }))
     .pipe(dest('dist/js'));
 }
