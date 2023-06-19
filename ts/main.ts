@@ -122,5 +122,4 @@ function loadVideos() {
 
 window.onload = (event) => {
     loadVideos();
-    console.log("page is fully loaded",videos);
 };
