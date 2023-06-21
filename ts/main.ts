@@ -121,13 +121,14 @@ window.onload = (event) => {
         vid.removeAllChildNodes(library_videos);
         vid.loadVideos(videos);
         vid.getTagsLength();
+        vid.clearTags();
     });
 
     apply_filter?.addEventListener('click', function() {
         vid.filter(videos,library_videos);
         vid.getTagsLength();
+        vid.addTags();
     });
-
     
 };
 
@@ -167,8 +168,24 @@ class Video {
     }
 
     addTags() {
+        const tag_wrapper = document.getElementById('filter_tags');
         const tags = this.getCheckedItems();
+        this.clearTags();
+        tags.forEach(element => {
+            const div = document.createElement('div');
+            const span = document.createElement('span');
+            span.textContent = element.value;
+            const cross = document.createElement('span');
+            cross.classList.add('cross');
+            span.append(cross);
+            div.append(span);
+            tag_wrapper?.append(div);
+        });
+    }
 
+    clearTags() {
+        const tag_wrapper = document.getElementById('filter_tags');
+        tag_wrapper!.innerHTML = '';
     }
 
     removeAllChildNodes(parent: any): void {
