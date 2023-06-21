@@ -138,8 +138,7 @@ class Video {
                 checked_items.push(options[i]);
             }
         }
-        console.log(checked_items);
-        const filtered_list = list.filter((item: any) => item.category === 'pdf');
+        const filtered_list = list.filter((item: any) => checked_items.some(f => item.tags.includes(f.value.toLowerCase())));
         this.removeAllChildNodes(lib);
         this.loadVideos(filtered_list);
     }
