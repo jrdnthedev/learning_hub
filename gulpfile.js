@@ -25,6 +25,7 @@ function compileTypescript(){
     .pipe(ts({
         noImplicitAny: true,
         outFile: 'main.js',
+        module: 'amd'
     }))
     .pipe(dest('dist/js'));
 }
