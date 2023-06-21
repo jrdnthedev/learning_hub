@@ -120,10 +120,12 @@ window.onload = (event) => {
         vid.unselectNodes();
         vid.removeAllChildNodes(library_videos);
         vid.loadVideos(videos);
+        vid.getTagsLength();
     });
 
     apply_filter?.addEventListener('click', function() {
         vid.filter(videos,library_videos);
+        vid.getTagsLength();
     });
 
     
@@ -135,7 +137,7 @@ class Video {
 
     filter(list:any, lib: any, ): void {
         
-        const filtered_list = list.filter((item: any) => this.getCheckedItems().some(f => item.tags.includes(f.value.toLowerCase())));
+        const filtered_list = list.filter((item: any) => this.getCheckedItems().some((f: any) => item.tags.includes(f.value.toLowerCase())));
         this.removeAllChildNodes(lib);
         this.loadVideos(filtered_list);
     }
@@ -150,11 +152,23 @@ class Video {
         }
         return checked_items;
     }
+
     unselectNodes() {
         const selectedItems = this.getCheckedItems();
         for(let i = 0; i < selectedItems.length; i++) {
             selectedItems[i].checked = false;
         }
+    }
+
+    getTagsLength() {
+        const t = document.getElementById('tags_number');
+        const tags = this.getCheckedItems();
+        t!.textContent = tags.length + ' applied';
+    }
+
+    addTags() {
+        const tags = this.getCheckedItems();
+
     }
 
     removeAllChildNodes(parent: any): void {
