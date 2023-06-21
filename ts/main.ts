@@ -6,6 +6,7 @@ let isMobileMenuToggle = false;
 //util class
 const toggle_btn = document.querySelectorAll('#faq_section .toggle_btn');
 const filter_menu = document.getElementById('filter_btn');
+const desktop_filter_close_btn = document.getElementById('desktop_filter_close_btn');
 const menu = document.getElementById('filter_menu');
 const close_btn = document.getElementById('filter_close_btn');
 const hamburger = document.getElementById('hamburger_link');
@@ -13,6 +14,7 @@ const mobile_menu = document.getElementById('navigation');
 const mobile_menu_close = document.getElementById('menu_close_btn');
 //util class
 filter_menu?.addEventListener('click',toggleMenu);
+desktop_filter_close_btn?.addEventListener('click',toggleMenu);
 //util class
 close_btn?.addEventListener('click',toggleMenu);
 //util class
@@ -115,6 +117,7 @@ window.onload = (event) => {
     vid.loadVideos(videos);
 
     clear_all_filter?.addEventListener('click', function(){
+        vid.unselectNodes();
         vid.removeAllChildNodes(library_videos);
         vid.loadVideos(videos);
     });
@@ -131,6 +134,13 @@ class Video {
     constructor(){}
 
     filter(list:any, lib: any, ): void {
+        
+        const filtered_list = list.filter((item: any) => this.getCheckedItems().some(f => item.tags.includes(f.value.toLowerCase())));
+        this.removeAllChildNodes(lib);
+        this.loadVideos(filtered_list);
+    }
+
+    getCheckedItems() {
         const options = document.querySelectorAll("#filter_menu_list input") as NodeListOf<HTMLInputElement>;
         let checked_items:any = [];
         for(let i = 0; i < options.length; i++) {
@@ -138,9 +148,13 @@ class Video {
                 checked_items.push(options[i]);
             }
         }
-        const filtered_list = list.filter((item: any) => checked_items.some(f => item.tags.includes(f.value.toLowerCase())));
-        this.removeAllChildNodes(lib);
-        this.loadVideos(filtered_list);
+        return checked_items;
+    }
+    unselectNodes() {
+        const selectedItems = this.getCheckedItems();
+        for(let i = 0; i < selectedItems.length; i++) {
+            selectedItems[i].checked = false;
+        }
     }
 
     removeAllChildNodes(parent: any): void {
