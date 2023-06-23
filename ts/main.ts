@@ -27,6 +27,8 @@ const clear_all_filter = document.getElementById('clear_all_filter');
 const library_videos = document.getElementById('library_videos');
 //video class
 const media_list = document.querySelectorAll('#media_list li');
+
+const filter_select_all_btn = document.getElementById('filter_select_all_btn');
 //video class
 const videos = [
     {
@@ -147,6 +149,12 @@ window.onload = (event) => {
             
         })
     })
+
+    filter_select_all_btn?.addEventListener('click', function(e){
+        console.log('clicked')
+        vid.selectAllCheckBoxes();
+        e.preventDefault();
+    })
     
 };
 
@@ -161,6 +169,16 @@ class Video {
         this.loadVideos(filtered_list);
     }
 
+    selectAllCheckBoxes() {
+        const options = document.querySelectorAll("#menu_list_links input") as NodeListOf<HTMLInputElement>;
+        console.log(options);
+        for(let i = 0; i < options.length; i++) {
+            if(!options[i].checked) {
+                options[i].checked = true;
+            }
+        }
+        console.log(options);
+    }
     getCheckedItems() {
         const options = document.querySelectorAll("#filter_menu_list input") as NodeListOf<HTMLInputElement>;
         let checked_items:any = [];
