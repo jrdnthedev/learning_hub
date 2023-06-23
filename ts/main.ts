@@ -122,22 +122,15 @@ function navLinks(node: any) {
     return node;
 }
 
-nav_wrapper_links.forEach( link => {
-    link.addEventListener('click', function(e){
-        // nav_wrapper_links.forEach( (f: any) => {
-        //     // f.classList.remove('active');
-        //     console.log(this.children.href,window.location.pathname);
-        //     if(this.href === window.location.pathname){
-                
-        //     }   
-        // });
-        console.log(this.href.includes(window.location.pathname))
-        if(this.href.includes(window.location.pathname)) {
-            this.classList.add('active');
-        }
+// nav_wrapper_links.forEach( link => {
+//     link.addEventListener('click', function(e){
+//         console.log(this.href.includes(window.location.pathname))
+//         if(this.href.includes(window.location.pathname)) {
+//             this.classList.add('active');
+//         }
         
-    })
-});
+//     })
+// });
 
 window.onload = (event) => {
     const vid =  new Video();
@@ -326,3 +319,9 @@ class Video {
         })
     }
 }
+
+// class TabList {
+//     constructor(){}
+
+
+// }

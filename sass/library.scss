@@ -223,7 +223,7 @@ aside {
         }
     }
     #filter_menu_list {
-        height: auto;
+        height: 400px;
     }
     #filter_wrapper {
         display: flex;
@@ -261,6 +261,7 @@ aside {
             margin-bottom: 0;
         }
         #filter_menu_list {
+            height: auto;
             flex: 1;
             padding: 1rem;
             button.link {
