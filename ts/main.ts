@@ -1,8 +1,7 @@
-// import { Video } from "./video";
-
 let isListToggle = false;
 let toggleFilterMenu = false;
 let isMobileMenuToggle = false;
+let isFilterLinkToggle = false;
 //util class
 const toggle_btn = document.querySelectorAll('#faq_section .toggle_btn');
 const filter_menu = document.getElementById('filter_btn');
@@ -27,12 +26,12 @@ const clear_all_filter = document.getElementById('clear_all_filter');
 //video class
 const library_videos = document.getElementById('library_videos');
 //video class
-
+const media_list = document.querySelectorAll('#media_list li');
 //video class
 const videos = [
     {
         "title": "How to look up quotes for stocks and other securities",
-        "category": "video",
+        "category": "videos",
         "tags": ["tfsa","advice","investments"],
         "date":"January 15th, 2023",
         "video_link": "youtube.ca",
@@ -40,7 +39,7 @@ const videos = [
     },
     {
         "title": "How to look up quotes for stocks and other securities",
-        "category": "podcast",
+        "category": "podcasts",
         "tags": ["movemoney","fundtransfer","man"],
         "date":"June 12th, 2023",
         "video_link": "youtube.ca",
@@ -48,7 +47,7 @@ const videos = [
     },
     {
         "title": "How to look up quotes for stocks and other securities",
-        "category": "video",
+        "category": "videos",
         "tags": ["stcokoptions","beta","account"],
         "date":"June 8th, 2023",
         "video_link": "youtube.ca",
@@ -56,7 +55,7 @@ const videos = [
     },
     {
         "title": "How to look up quotes for stocks and other securities",
-        "category": "video",
+        "category": "videos",
         "tags": ["test","advice","orion"],
         "date":"May 8th, 2023",
         "video_link": "youtube.ca",
@@ -112,6 +111,7 @@ function toggleMobileMenu() {
 }
 
 
+
 window.onload = (event) => {
     const vid =  new Video();
     vid.loadVideos(videos);
@@ -121,7 +121,7 @@ window.onload = (event) => {
         vid.removeAllChildNodes(library_videos);
         vid.loadVideos(videos);
         vid.getTagsLength();
-        vid.clearTags();
+        vid.clearElement('filter_tags');
     });
 
     apply_filter?.addEventListener('click', function() {
@@ -129,6 +129,24 @@ window.onload = (event) => {
         vid.getTagsLength();
         vid.addTags();
     });
+    
+    vid.displayCheckBoxes('all');
+
+    media_list.forEach( link => {
+        link.addEventListener('click', function(e){
+            isFilterLinkToggle = !isFilterLinkToggle;
+            media_list.forEach( f => {
+                f.classList.remove('active');
+                this.classList.add('active');
+            });
+            this.ariaExpanded = isListToggle;
+            let text = this.textContent;
+            vid.clearElement('menu_list_links');
+            vid.displayCheckBoxes(text.toLowerCase());
+            e.preventDefault();
+            
+        })
+    })
     
 };
 
@@ -170,8 +188,8 @@ class Video {
     addTags() {
         const tag_wrapper = document.getElementById('filter_tags');
         const tags = this.getCheckedItems();
-        this.clearTags();
-        tags.forEach(element => {
+        this.clearElement(tag_wrapper!.id);
+        tags.forEach((element:any) => {
             const div = document.createElement('div');
             const span = document.createElement('span');
             span.textContent = element.value;
@@ -183,8 +201,8 @@ class Video {
         });
     }
 
-    clearTags() {
-        const tag_wrapper = document.getElementById('filter_tags');
+    clearElement(id: string) {
+        const tag_wrapper = document.getElementById(id);
         tag_wrapper!.innerHTML = '';
     }
 
@@ -225,5 +243,43 @@ class Video {
             figure.append(video,figcaption);
             library_videos?.append(figure);
         });
+    }
+
+    getCheckBoxes(name: string) {
+        const list: any = [];
+
+        videos.forEach((item: any) => {
+            if(name === item.category) {
+                list.push(...item.tags);
+            } else if (name === 'all') {
+                list.push(...item.tags);
+            }
+        });
+        return list;
+    }
+
+    displayCheckBoxes(name: string) {
+        const boxes = this.getCheckBoxes(name);
+        this.buildCheckBoxList(Array.from(new Set(boxes)));
+    }
+
+    buildCheckBoxList(list:any []) {
+        list.forEach(item => {
+            const li = document.createElement('li');
+            const label = document.createElement('label');
+            const input = document.createElement('input');
+            const span = document.createElement('span');
+            const wrapper = document.getElementById('menu_list_links');
+            label.htmlFor = item;
+            input.type =  'checkbox';
+            input.id = item;
+            input.value = item;
+            span.classList.add('checkmark');
+            label.textContent = item;
+            label.append(input);
+            label.append(span);
+            li.append(label);
+            wrapper?.append(li);
+        })
     }
 }

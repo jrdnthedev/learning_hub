@@ -103,7 +103,7 @@ aside {
         cursor: pointer;
         height: 0;
         width: 0;
-        &:checked ~ .checkmark {
+        &:checked + .checkmark {
             background-color: variables.$primary;
             border: 2px solid variables.$primary;
             &:after {
