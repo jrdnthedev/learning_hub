@@ -2,6 +2,7 @@ let isListToggle = false;
 let toggleFilterMenu = false;
 let isMobileMenuToggle = false;
 let isFilterLinkToggle = false;
+let isNavLinksToggle = false;
 //util class
 const toggle_btn = document.querySelectorAll('#faq_section .toggle_btn');
 const filter_menu = document.getElementById('filter_btn');
@@ -27,6 +28,7 @@ const clear_all_filter = document.getElementById('clear_all_filter');
 const library_videos = document.getElementById('library_videos');
 //video class
 const media_list = document.querySelectorAll('#media_list li');
+const nav_wrapper_links = document.querySelectorAll('#nav_wrapper_body li a');
 
 const filter_select_all_btn = document.getElementById('filter_select_all_btn');
 //video class
@@ -112,7 +114,30 @@ function toggleMobileMenu() {
     this.ariaExpanded = isMobileMenuToggle;
 }
 
+function navLinks(node: any) {
+    node.forEach( (f: any) => {
+        f.classList.remove('active');
+        this.classList.add('active');
+    });
+    return node;
+}
 
+nav_wrapper_links.forEach( link => {
+    link.addEventListener('click', function(e){
+        // nav_wrapper_links.forEach( (f: any) => {
+        //     // f.classList.remove('active');
+        //     console.log(this.children.href,window.location.pathname);
+        //     if(this.href === window.location.pathname){
+                
+        //     }   
+        // });
+        console.log(this.href.includes(window.location.pathname))
+        if(this.href.includes(window.location.pathname)) {
+            this.classList.add('active');
+        }
+        
+    })
+});
 
 window.onload = (event) => {
     const vid =  new Video();
@@ -136,8 +161,7 @@ window.onload = (event) => {
 
     media_list.forEach( link => {
         link.addEventListener('click', function(e){
-            isFilterLinkToggle = !isFilterLinkToggle;
-            media_list.forEach( f => {
+            media_list.forEach( (f: any) => {
                 f.classList.remove('active');
                 this.classList.add('active');
             });
@@ -146,9 +170,10 @@ window.onload = (event) => {
             vid.clearElement('menu_list_links');
             vid.displayCheckBoxes(text.toLowerCase());
             e.preventDefault();
-            
         })
     })
+
+    
 
     filter_select_all_btn?.addEventListener('click', function(e){
         console.log('clicked')
