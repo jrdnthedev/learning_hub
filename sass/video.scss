@@ -1,9 +1,11 @@
-#tabpanel_2 {
-    display: none;
+#video_section .tab_panel {
+    &.is-hidden {
+        display: none;
+    }
 }
 
 .tabpanel_btn {
-    grid-column: span 6;
+    flex: 1;
     padding: 0;
     font-size: 14px;
     line-height: 24px;
@@ -25,8 +27,7 @@
 }
 
 #tab_controls {
-    display: grid;
-    grid-template: min-content auto min-content / repeat(12,1fr);
+    display: flex;
     margin-bottom: 1.5rem;
 }
 .tab_panel {
@@ -51,8 +52,6 @@
             }
         }
     }
-
-    #tabpanel_2 {display: none !important;}
 }
 
 @media screen and (min-width:1024px) {
