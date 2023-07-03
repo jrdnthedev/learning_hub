@@ -14,7 +14,7 @@
 }
 
 #filter_section {
-    margin: 1rem 1rem 0;
+    margin: 0 1rem;
     padding: 0;
     box-shadow: unset;
 }
@@ -211,6 +211,11 @@ aside {
     background: inherit;
     box-shadow: unset;
   }
+
+  #temp_quick_filter {
+    margin-top: 1rem;
+  }
+  
   @media screen and (min-width:768px) {
     aside {
         width: 375px;

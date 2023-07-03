@@ -175,7 +175,9 @@ window.onload = (event) => {
         console.log('clicked')
         vid.selectAllCheckBoxes();
         e.preventDefault();
-    })
+    });
+
+    vid.buildDropdown(localStorage.getItem['filter_category']);
     
 };
 
@@ -298,8 +300,7 @@ class Video {
     }
 
     displayCheckBoxes(name: string) {
-        const boxes = this.getCheckBoxes(name);
-        this.buildCheckBoxList(Array.from(new Set(boxes)));
+        this.buildCheckBoxList(Array.from(new Set(this.getCheckBoxes(name))));
     }
 
     buildCheckBoxList(list:any []) {
@@ -310,7 +311,7 @@ class Video {
             const span = document.createElement('span');
             const wrapper = document.getElementById('menu_list_links');
             label.htmlFor = item;
-            input.type =  'checkbox';
+            input.type = 'checkbox';
             input.id = item;
             input.value = item;
             span.classList.add('checkmark');
@@ -319,6 +320,17 @@ class Video {
             label.append(span);
             li.append(label);
             wrapper?.append(li);
+        })
+    }
+
+    buildDropdown(name: string){
+        const list = Array.from(new Set(this.getCheckBoxes('beta')))
+        let dp = document.getElementById('quick_filter');
+        list.forEach((item: any) => {
+            const list_item = document.createElement('option');
+            list_item.value = item;
+            list_item.textContent = item;
+            dp?.append(list_item);
         })
     }
 }
