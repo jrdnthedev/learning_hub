@@ -115,6 +115,22 @@ figure {
     #banner {
         padding: 2.5rem 4rem 2.5rem 2.5rem;
         margin-bottom: 3rem;
+        #banner_wrapper {
+            display: flex;
+            div {
+                flex: 1;
+                &:last-of-type {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    #circle {
+        background: white;
+        display: inline-block;
+        border-radius: 50%;
+        height: 250px;
+        width: 250px;
     }
 }
 
@@ -124,7 +140,17 @@ figure {
         margin: 0 auto;
     }
     #banner {
-        padding: 4.5rem 7.3rem;
+        padding: 4.5rem 7.5rem;
+    }
+}
+
+@media screen and (min-width:1050px) {
+    #banner {
+        padding: 4.5rem 0;
+    }
+    #banner_wrapper {
+        width: 1024px;
+        margin: 0 auto;
     }
 }
 
