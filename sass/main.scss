@@ -119,7 +119,10 @@ figure {
         padding: 1.5rem 4rem 0 2.5rem;
         #banner_wrapper {
             display: flex;
-            div {
+            #banner_content_container {
+                align-self: center;
+            }
+            & > div {
                 flex: 1;
                 &:last-of-type {
                     text-align: right;
