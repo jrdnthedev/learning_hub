@@ -55,19 +55,18 @@ section {
 }
 
 #banner {
-    background: variables.$sky_blue;
+    background: variables.$main_background;
     grid-column: 1 / -1;
     box-shadow: unset;
-    padding: 2rem 2rem 2.5rem 2rem;
+    padding: 1.5rem 2rem 0 2rem;
     margin-bottom: 2rem;
 }
 
+.top_border {
+    border-top: 1px solid variables.$primary_light_grey;
+}
+
 .content_wrapper {
-    
-    &.top_border {
-        border-top: 1px solid variables.$primary;
-    }
-    
     figure {
         margin: 0 0 1.5rem;
         flex-direction: column;
@@ -84,6 +83,8 @@ section {
 
 figure {
     border: 1px solid variables.$primary_light_grey;
+    background: white;
+    box-shadow: 0 0 2px rgba(0, 25, 40, 0.12), 0 2px 2px rgba(0, 25, 40, 0.07);
 }
 
 .content_footer {
@@ -113,8 +114,7 @@ figure {
 
 @media screen and (min-width:768px) {
     #banner {
-        padding: 2.5rem 4rem 2.5rem 2.5rem;
-        margin-bottom: 3rem;
+        padding: 1.5rem 4rem 0 2.5rem;
         #banner_wrapper {
             display: flex;
             div {
@@ -140,13 +140,13 @@ figure {
         margin: 0 auto;
     }
     #banner {
-        padding: 4.5rem 7.5rem;
+        padding: 1.5rem 7.5rem 0;
     }
 }
 
 @media screen and (min-width:1050px) {
     #banner {
-        padding: 4.5rem 0;
+        padding: 1.5rem 0 0;
     }
     #banner_wrapper {
         width: 1024px;

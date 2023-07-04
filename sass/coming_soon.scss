@@ -6,15 +6,6 @@
     }
 }
 
-#coming_soon {
-    .content_wrapper {
-        figure{
-            figcaption {
-                background: variables.$primary_light_grey;
-            }
-        }
-    }
-}
 #launching_section, #available_section{
     background: inherit;
     box-shadow: unset;
@@ -32,10 +23,6 @@
         .content_footer {
             grid-column: 1 / -1;
         }
-    }
-    #coming_soon_section .content_wrapper {
-        padding: 1rem;
-        background: variables.$light_grey;
     }
     #coming_soon {
         .content_wrapper {
