@@ -49,15 +49,8 @@ aside {
 
 #library {
     .content_wrapper {
-        display: grid;
-        grid-template: min-content auto min-content/repeat(12, 1fr);
-        column-gap: 1rem;
         figure {
-            grid-column: span 4;
             margin: 0 0 .5rem;
-            &:last-child {
-                margin: 0 0 .5rem;
-            }
             figcaption {
                 background: variables.$white;
                 .video_length {
@@ -239,6 +232,24 @@ aside {
         figcaption .video_length {
             display: block;
             margin-bottom: 1rem;
+        }
+    }
+
+    #library {
+        .content_wrapper {
+            display: grid;
+            grid-template: min-content auto min-content/repeat(12, 1fr);
+            column-gap: 1rem;
+            figure {
+                grid-column: span 6;
+                margin: 0 0 .5rem;
+                figcaption {
+                    background: variables.$white;
+                    .video_length {
+                        display: none;
+                    }
+                }
+            }
         }
     }
   }

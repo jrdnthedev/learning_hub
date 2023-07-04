@@ -325,7 +325,9 @@ class Video {
 }
 
 class TabsManual {
+    //index signature for objects of unknown structure
     [x: string]: any;
+    
     constructor(groupNode: any) {
       this.tablistNode = groupNode;
   
