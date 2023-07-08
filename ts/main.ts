@@ -36,7 +36,7 @@ const videos = [
     {
         "title": "How to look up quotes for stocks and other securities",
         "category": "videos",
-        "tags": ["tfsa","advice","investments"],
+        "tags": ["tfsa","advice","investments","movemoney"],
         "date":"January 15th, 2023",
         "video_link": "youtube.ca",
         "video_length": "2:03"
@@ -157,11 +157,14 @@ window.onload = (event) => {
 
     media_list.forEach( link => {
         link.addEventListener('click', function(e){
+            isFilterLinkToggle !=  isFilterLinkToggle;
+            console.log(this.textContent);
             media_list.forEach( (f: any) => {
                 f.classList.remove('active');
                 this.classList.add('active');
+                f.ariaExpanded = 'false';
+                this.ariaExpanded = 'true';
             });
-            this.ariaExpanded = isListToggle;
             let text = this.textContent;
             vid.clearElement('menu_list_links');
             vid.displayCheckBoxes(text.toLowerCase());
@@ -187,7 +190,8 @@ class Video {
 
     filter(list:any, lib: any): void {
         
-        const filtered_list = list.filter((item: any) => this.getCheckedItems().some((f: any) => item.tags.includes(f.value.toLowerCase())));
+        const filtered_list = list.filter((item: any) => this.getCheckedItems().some((f: any) => item.tags.includes(f.value.toLowerCase())  ));
+        console.log(filtered_list);
         this.removeAllChildNodes(lib);
         this.loadVideos(filtered_list);
     }
