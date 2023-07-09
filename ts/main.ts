@@ -180,7 +180,7 @@ window.onload = (event) => {
         e.preventDefault();
     });
 
-    console.log(localStorage.getItem['filter_category']);
+    // console.log(localStorage.getItem['filter_category']);
     
 };
 
@@ -447,7 +447,7 @@ class TabsManual {
     // with the space and enter keys
     onClick(event: any) {
       this.setSelectedTab(event.currentTarget);
-      localStorage.setItem("filter_category", event.target.textContent);
+    //   localStorage.setItem("filter_category", event.target.textContent);
     }
 }
   
@@ -455,6 +455,13 @@ class TabsManual {
   
   window.addEventListener('load', function () {
     var tablists = document.querySelectorAll('[role=tablist]#tab_controls');
+    for (var i = 0; i < tablists.length; i++) {
+      new TabsManual(tablists[i]);
+    }
+  });
+
+  window.addEventListener('load', function () {
+    var tablists = document.querySelectorAll('[role=tablist]#options_tab_controls');
     for (var i = 0; i < tablists.length; i++) {
       new TabsManual(tablists[i]);
     }

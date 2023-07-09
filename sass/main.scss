@@ -1,11 +1,12 @@
-@use 'variables';
+@use 'constants/variables';
 @import 'sections/header';
-@import 'typography';
+@import 'constants/typography';
 @import 'coming_soon';
 @import 'faq';
 @import 'library';
 @import 'home';
 @import 'investing';
+@import 'components';
 
 * {
     box-sizing: border-box;
@@ -75,9 +76,6 @@ section {
         margin: 0 0 1.5rem;
         flex-direction: column;
         display: flex;
-        &:last-of-type {
-            margin: 0;
-        }
         figcaption {
             padding: .5rem 1rem;
             grid-column: 1 / -1;
@@ -94,22 +92,6 @@ figure {
 .content_footer {
     margin-top: 1rem;
     text-align: right;
-}
-
-.toggle_btn {
-    padding: 1rem 0;
-    color: variables.$slate;
-    margin-bottom: 1rem;
-    display: flex;
-    width: 100%;
-    cursor: pointer;
-    border-bottom: 1px solid variables.$primary_light_grey;
-    &.active {
-        border-bottom: 1px solid variables.$primary;
-    }
-    .chevron {
-        margin-right: 1rem;
-    }
 }
 
 .search {

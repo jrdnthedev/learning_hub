@@ -1,0 +1,13 @@
+#options_section {
+    .tab_panel {
+        display: block;
+        &.is-hidden {
+            display: none;
+        }
+    }
+}
+
+#options_tab_controls {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
