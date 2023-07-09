@@ -1,11 +1,11 @@
 @use 'variables';
-@import 'header';
+@import 'sections/header';
 @import 'typography';
-@import 'recent_section';
 @import 'coming_soon';
 @import 'faq';
-@import 'video';
 @import 'library';
+@import 'home';
+@import 'investing';
 
 * {
     box-sizing: border-box;
@@ -182,8 +182,4 @@ figure {
         width: 1024px;
         margin: 0 auto;
     }
-}
-
-@media screen and (min-width:1900px) {
-
 }
