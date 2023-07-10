@@ -134,7 +134,7 @@ function navLinks(node: any) {
 
 let btns = document.querySelectorAll('#tab_controls button');
 let panels = document.getElementsByClassName('tab_panel');
-console.log(btns, panels)
+
 window.onload = (event) => {
     const vid =  new Video();
     vid.loadVideos(videos);
@@ -197,7 +197,6 @@ class Video {
                 return item.tags.includes(f.value.toLowerCase());
             }
         }  ));
-        console.log(filtered_list);
         this.removeAllChildNodes(lib);
         this.loadVideos(filtered_list);
     }
@@ -453,7 +452,6 @@ class TabsManual {
     // with the space and enter keys
     onClick(event: any) {
       this.setSelectedTab(event.currentTarget);
-    //   localStorage.setItem("filter_category", event.target.textContent);
     }
 }
   
