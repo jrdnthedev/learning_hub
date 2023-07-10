@@ -148,7 +148,8 @@ window.onload = (event) => {
     });
 
     apply_filter?.addEventListener('click', function() {
-        vid.filter(videos,library_videos,'videos');
+        const cat = localStorage.getItem('filter_category');
+        vid.filter(videos,library_videos,cat);
         vid.getTagsLength();
         vid.addTags();
     });
@@ -159,11 +160,12 @@ window.onload = (event) => {
         link.addEventListener('click', function(e){
             isFilterLinkToggle !=  isFilterLinkToggle;
             console.log(this.textContent);
+            localStorage.setItem("filter_category", this.textContent);
             media_list.forEach( (f: any) => {
                 f.classList.remove('active');
                 this.classList.add('active');
                 f.ariaExpanded = 'false';
-                this.ariaExpanded = 'true';
+                this.ariaExpanded = 'true'; 
             });
             let text = this.textContent;
             vid.clearElement('menu_list_links');
@@ -179,8 +181,6 @@ window.onload = (event) => {
         vid.selectAllCheckBoxes();
         e.preventDefault();
     });
-
-    // console.log(localStorage.getItem['filter_category']);
     
 };
 
@@ -191,8 +191,10 @@ class Video {
     filter(list:any, lib: any, category: any): void {
         
         const filtered_list = list.filter((item: any) => this.getCheckedItems().some((f: any) => {
-            if(item.tags.includes(f.value.toLowerCase()) && item.category === category) {
+            if(item.tags.includes(f.value.toLowerCase()) && item.category === category.toLowerCase()) {
                 return item;
+            } else {
+                return item.tags.includes(f.value.toLowerCase());
             }
         }  ));
         console.log(filtered_list);
