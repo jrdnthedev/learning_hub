@@ -148,7 +148,7 @@ window.onload = (event) => {
     });
 
     apply_filter?.addEventListener('click', function() {
-        vid.filter(videos,library_videos);
+        vid.filter(videos,library_videos,'videos');
         vid.getTagsLength();
         vid.addTags();
     });
@@ -188,9 +188,13 @@ class Video {
     
     constructor(){}
 
-    filter(list:any, lib: any): void {
+    filter(list:any, lib: any, category: any): void {
         
-        const filtered_list = list.filter((item: any) => this.getCheckedItems().some((f: any) => item.tags.includes(f.value.toLowerCase())  ));
+        const filtered_list = list.filter((item: any) => this.getCheckedItems().some((f: any) => {
+            if(item.tags.includes(f.value.toLowerCase()) && item.category === category) {
+                return item;
+            }
+        }  ));
         console.log(filtered_list);
         this.removeAllChildNodes(lib);
         this.loadVideos(filtered_list);
