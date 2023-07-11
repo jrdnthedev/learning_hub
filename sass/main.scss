@@ -137,12 +137,18 @@ figure {
             }
         }
     }
-    #circle {
+    .circle {
         background: white;
         display: inline-block;
         border-radius: 50%;
         height: 250px;
         width: 250px;
+        &.small {
+            height: 100px;
+            width: 100px;
+            background: blue;
+        }
+
     }
 }
 
