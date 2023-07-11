@@ -375,6 +375,7 @@ class TabsManual {
           tab.setAttribute('aria-selected', 'true');
           tab.removeAttribute('tabindex');
           tab.classList.add('active');
+          localStorage.setItem("filter_category",tab.dataset.category);
           this.tabpanels[i].classList.remove('is-hidden');
         } else {
           tab.setAttribute('aria-selected', 'false');
