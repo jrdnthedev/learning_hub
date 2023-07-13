@@ -1,2 +1,16 @@
 @import 'sections/recent_section';
 @import 'sections/video';
+
+#tab_controls {
+    display: none;
+}
+
+@media screen and (min-width:768px) {
+    #tab_controls {
+        display: block;
+    }
+
+    #mobile_tab_controls {
+        display: none;
+    }
+}

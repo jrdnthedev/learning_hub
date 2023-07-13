@@ -470,4 +470,24 @@ class TabsManual {
     for (var i = 0; i < tablists.length; i++) {
       new TabsManual(tablists[i]);
     }
+
+
+    let tablists2 = document.querySelectorAll('[role=tablist]#mobile_select');
+    let options = Array.from(tablists2[0].querySelectorAll('option'));
+    let panel = document.querySelectorAll('.tab_panel');
+
+      tablists2[0].addEventListener('change',function(){
+        console.log(this , this.dataset.category);
+        for(let i = 0; i < panel.length; i++) {
+          if(this.selectedIndex === i) {
+            panel[i].classList.remove('is-hidden')
+          } else {
+            panel[i].classList.add('is-hidden')
+          }
+        }
+      })
+    
   });
+ 
+  
+  

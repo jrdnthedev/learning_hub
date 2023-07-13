@@ -179,8 +179,16 @@
                     data-category="beta"
                     aria-controls="tabpanel_3"
                     tabindex="-1">Beta<span></span></button>
+                    
                 </div>
-                <div class="content_wrapper" >
+                <div id="mobile_tab_controls">
+                    <select name="mobile_select" id="mobile_select" role="tablist">
+                        <option value="investments" data-category="investments" id="tab-1" aria-controls="tabpanel_1">How to use InvestorLine</option>
+                        <option value="advice" data-category="advice" id="tab-2" aria-controls="tabpanel_2">Investment advice</option>
+                        <option value="beta" data-category="beta" id="tab-3" aria-controls="tabpanel_3">Beta</option>
+                    </select>
+                </div>
+                <div class="content_wrapper">
                     <h3 class="headline">trending Now</h3>
                     <div role="tabpanel" id="tabpanel_1" class="tab_panel" aria-labelledby="tab-1">
                         <figure>
